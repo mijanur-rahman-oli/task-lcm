@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 const lcm = (a, b) => Math.abs(a * b) / gcd(a, b);
-app.get('https://task-lcm.onrender.com/sheikhmijanurrahmanoli@gmail.com?x={}&y={}', (req, res) => {
+app.get('https://task-lcm.onrender.com/sheikhmijanurrahmanoli_gmail.com?x={}&y={}', (req, res) => {
     const { x, y } = req.query;
     const numX = Number(x);
     const numY = Number(y);

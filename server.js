@@ -1,18 +1,10 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-// Helper function for GCD (Greatest Common Divisor)
 const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
-
-// Helper function for LCM (Lowest Common Multiple)
 const lcm = (a, b) => Math.abs(a * b) / gcd(a, b);
-
-// REPLACE 'your_email_com' with your normalized email address
-app.get('/your_email_com', (req, res) => {
+app.get('https://task-lcm.onrender.com/sheikhmijanurrahmanoli@gmail.com?x={}&y={}', (req, res) => {
     const { x, y } = req.query;
-
-    // Validation: Must be present, must be numeric, must be Natural Numbers (integers > 0)
     const numX = Number(x);
     const numY = Number(y);
 
@@ -23,8 +15,6 @@ app.get('/your_email_com', (req, res) => {
     }
 
     const result = lcm(numX, numY);
-    
-    // Send as plain string
     res.type('text/plain').send(result.toString());
 });
 
